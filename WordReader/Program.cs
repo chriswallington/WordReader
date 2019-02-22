@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WordReader
 {
@@ -23,6 +22,26 @@ namespace WordReader
                 StringBuilderReverse(words);
             }
 
+            string path = @"C:\Users\wallingtonc\Documents\Pluralsight Training\Week 2 - Github.txt";
+
+            FileStream file = new FileStream(path, FileMode.Open);
+            Console.WriteLine("File name: " + file.Name);
+            Console.WriteLine("File size: " + file.Length);
+            file.Close();
+
+            using (StreamReader streamReader = new StreamReader(path))
+            {
+                int linecount = 0;
+                while (streamReader.ReadLine() != null)
+                {
+                    linecount++;
+                }
+                Console.WriteLine("Number of lines: " + linecount);
+                
+            }
+
+
+       
 
         }
 
