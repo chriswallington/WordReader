@@ -12,8 +12,6 @@ namespace WordReader
         {
             string words = "";
 
-// had a look at if statements, but effectively runs once. While will execute until condition is met
-
             while (words != "x")
             {
                 Console.WriteLine("Enter some words");
