@@ -24,11 +24,14 @@ namespace WordReader
 
             string path = @"C:\Users\wallingtonc\Documents\Pluralsight Training\Week 2 - Github.txt";
 
-            FileStream file = new FileStream(path, FileMode.Open);
-            Console.WriteLine("File name: " + file.Name);
-            Console.WriteLine("File size: " + file.Length);
-            file.Close();
+            FileStreamRead(path);
 
+            StreamReaderCount(path);
+
+        }
+
+        private static void StreamReaderCount(string path)
+        {
             using (StreamReader streamReader = new StreamReader(path))
             {
                 int linecount = 0;
@@ -37,12 +40,16 @@ namespace WordReader
                     linecount++;
                 }
                 Console.WriteLine("Number of lines: " + linecount);
-                
+
             }
+        }
 
-
-       
-
+        private static void FileStreamRead(string path)
+        {
+            FileStream file = new FileStream(path, FileMode.Open);
+            Console.WriteLine("File name: " + file.Name);
+            Console.WriteLine("File size: " + file.Length);
+            file.Close();
         }
 
         private static void LinqReverse(string words)
