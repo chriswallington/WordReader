@@ -21,20 +21,29 @@ namespace WordReader
                 Console.WriteLine("Words entered: " + words);
                 Console.WriteLine("Number of Letters: " + words.Length);
 
-                string wordsbackwards = string.Join(" ", words.Split(' ').Select(x => new String(x.Reverse().ToArray())));
-                Console.WriteLine("Words in reverse order: {0}", wordsbackwards);
-
-                StringBuilder sb = new StringBuilder();
-                string[] split = words.Split(' ');
-                for (int i = split.Length - 1; i > -1; i--)
-                {
-                    sb.Append(split[i]);
-                    sb.Append(" ");
-                }
-                Console.WriteLine("String Builder Reverse: {0}",sb);
+                LinqReverse(words);
+                StringBuilderReverse(words);
             }
 
 
+        }
+
+        private static void LinqReverse(string words)
+        {
+            string wordsbackwards = string.Join(" ", words.Split(' ').Select(x => new String(x.Reverse().ToArray())));
+            Console.WriteLine("Words in reverse order: {0}", wordsbackwards);
+        }
+
+        private static void StringBuilderReverse(string words)
+        {
+            StringBuilder sb = new StringBuilder();
+            string[] split = words.Split(' ');
+            for (int i = split.Length - 1; i > -1; i--)
+            {
+                sb.Append(split[i]);
+                sb.Append(" ");
+            }
+            Console.WriteLine("String Builder Reverse: {0}", sb);
         }
     }
     //test
