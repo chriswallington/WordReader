@@ -38,7 +38,7 @@ namespace WordReader
         }
     }
 
-
+    //Previous version test
     //class Words
     //{
     //    public string word { get; set; }
